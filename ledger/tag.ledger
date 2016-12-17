@@ -1,0 +1,4 @@
+tag init_personal
+; {"overwrite":{"template/init/personal/ledger/equity.ledger":"ledger/equity.ledger","template/init/personal/ledger/commodity.ledger":"ledger/commodity.ledger","template/init/personal/ledger/account.ledger":"ledger/account.ledger","template/init/personal/ledger/tag.ledger":"ledger/tag.ledger","template/init/personal/ledger/transaction.ledger":"ledger/transaction.ledger","template/init/personal/ledger/chain.ledger":"ledger/chain.ledger","template/init/personal/ledger/check.ledger":"ledger/check.ledger","template/init/LICENSE":"LICENSE","template/init/AUTHORS":"AUTHORS","template/init/CONTRIBUTING.md":"CONTRIBUTING.md","template/init/CHANGELOG.md":"CHANGELOG.md"}}
+tag register_personal
+; {"append":{"template/register/ledger/account.ledger":"ledger/account.ledger", "template/register/ledger/transaction.ledger":"ledger/transaction.ledger", "template/init/personal/AUTHORS": "AUTHORS"}}

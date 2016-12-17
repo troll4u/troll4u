@@ -1,0 +1,44 @@
+; Account structure is quite complex in the GitGuild, creating a symmetry between this ledger and the git tree itself.
+; A number of complex and potentially long account names may be difficult to read, but they're quite organized.
+; The basic structure is as follows.
+;
+; username:user account:repository:branch:parent commit hash:metadata
+;
+; Most of these are probably self explanatory. User account is the usual suspects of accounting: Income, Expenses, Assets, Liabilities, Equity.
+; User account also has two additional options related to voting: Height, Depth.
+; Metadata might be bitcoin or dash addresses, and/or transaction hashes.
+
+account troll4u
+    note The Guild's own account.
+account troll4u:Expenses
+    note The Guild's Expenses, i.e. Asset redemptions, contribution pay origination
+
+account troll4u:Depth
+    note the Guild's voting account. Votes in XP the amount of qualified Income earned by member(s).
+    assert commodity == "XP"
+account troll4u:Height
+    note the Guild's vote counting area. Votes by members on commits related to this guild are recorded here.
+    assert commodity == "XP"
+account troll4u:Equity
+account troll4u:Income
+account troll4u:Assets
+account troll4u:Liabilities
+    note This guild can only have XGG liabilities, and this is the source of all XGG.
+account troll4u:Expenses
+    note Members earning Income on approved labor can ask to cash in XGG against the Guild's Assets, creating an Expense
+
+account troll4u:Depth
+    note The votes that troll4u has spent. Cannot spend more than account height on a commit/issue.
+account troll4u:Height
+    note The number of votes that troll4u has received from the guild and also the XP voting power of troll4u.
+; users do not get Equity as members of a shared guild.
+account troll4u:Income
+account troll4u:Assets
+account troll4u:Liabilities
+account troll4u:Expenses
+
+account troll4u:Equity:init:None
+
+account troll4u:Equity:register:None
+
+

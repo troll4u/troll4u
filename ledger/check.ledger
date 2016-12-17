@@ -1,0 +1,26 @@
+; TODO lots of assertions and checks go here to ensure proper behavior
+; these will be suplimented with file templates and transformations
+
+define GUILD_DEPTH = (-account("troll4u:Depth:troll4u").total)
+define GUILD_HEIGHT = (account("troll4u:Height:troll4u").total)
+
+; Each user must have net positive score
+define user_vote_check(user_name) = (account(user_name + ":Height").total >= GUILD_DEPTH / 2)
+
+; Each branch of this guild must have net positive score
+define branch_vote_check(user_name, vote_guild_name, vote_branch) = (account(user_name + ":Height:" + vote_guild_name + ":" + vote_branch).total >= GUILD_DEPTH / 2)
+
+; Each issue must have net positive score
+define issue_vote_check(user_name, vote_guild_name, vote_branch, vote_parent) = (account(user_name + ":Height:" + vote_guild_name + ":" + vote_branch + ":" + vote_parent).total >= GUILD_DEPTH / 2)
+
+; user has not spent more XP than allowed on this issue
+define user_issue_vote_check(user_name, vote_guild_name, vote_branch, vote_parent) = (account(user_name + ":Height").total >= abs(account(user_name + ":Depth:" + vote_guild_name + ":" + vote_branch + ":" + vote_parent).total))
+
+; Guild itself must have positive height
+check user_vote_check("troll4u")
+
+check branch_vote_check("troll4u", "troll4u", "troll4u")
+check issue_vote_check("troll4u", "troll4u", "troll4u", "None")
+check branch_vote_check("troll4u", "troll4u", "troll4u")
+check user_issue_vote_check("troll4u", "troll4u", "troll4u", "None")
+

@@ -1,0 +1,7 @@
+
+2016/12/15 * troll4u Personal Guild Initialization
+    ; Create XP by giving the founder Equity
+    troll4u:Height:troll4u:troll4u:None                   1 XP
+    troll4u:Depth:troll4u:troll4u:None                     -1 XP
+    troll4u:Payable:troll4u:troll4u:None                   1 XGG
+    gitguild:Receivable:troll4u:troll4u:None                        -1 XGG
